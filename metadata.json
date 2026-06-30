@@ -1,0 +1,6 @@
+{
+  "name": "Vanguard Intelligence Suite",
+  "description": "An executive AI intelligence workspace for deep reasoning risk analysis, strategic compliance auditing, and interactive scenario modeling, worth over 100K Euro in corporate decision value.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,95 @@
+{
+  "fiscalYear": 2026,
+  "regimes": {
+    "ifu": {
+      "name": "Impôt Forfaitaire Unique (IFU)",
+      "description": "Régime simplifié destiné aux personnes physiques ou morales dont le chiffre d'affaires annuel n'excède pas le seuil légal.",
+      "thresholdDzd": 8000000,
+      "defaultRates": {
+        "production_vente": 5.0,
+        "services_liberal": 12.0
+      },
+      "obligations": [
+        "Déclaration prévisionnelle (G12) avant le 30 Juin",
+        "Déclaration définitive (G12 bis) avant le 20 Janvier de l'année N+1"
+      ],
+      "collectsTva": false,
+      "paysTap": false
+    },
+    "reel_simplifie": {
+      "name": "Régime Réel Simplifié",
+      "description": "Régime intermédiaire pour les PME avec comptabilité simplifiée.",
+      "obligations": [
+        "Déclaration mensuelle G50 avant le 20 du mois suivant",
+        "Déclaration annuelle de résultats (Liasse fiscale)"
+      ],
+      "collectsTva": true,
+      "paysTap": true
+    },
+    "reel": {
+      "name": "Régime Réel",
+      "description": "Régime général pour les grandes entreprises et SARL/EURL dépassant les seuils.",
+      "obligations": [
+        "Déclaration mensuelle G50 avant le 20 du mois suivant",
+        "Liasse fiscale annuelle détaillée avant le 30 Avril"
+      ],
+      "collectsTva": true,
+      "paysTap": true
+    }
+  },
+  "taxes": {
+    "tva": {
+      "normalRate": 19.0,
+      "reducedRate": 9.0,
+      "exemptRate": 0.0,
+      "categories": [
+        { "name": "Taux Normal (19%)", "value": 19 },
+        { "name": "Taux Réduit (9%)", "value": 9 },
+        { "name": "Exonéré (0%)", "value": 0 }
+      ]
+    },
+    "tap": {
+      "standardRate": 2.0,
+      "description": "Taxe sur l'Activité Professionnelle. Note: Supprimée pour la majorité des activités productives et professions libérales depuis la Loi de Finances 2024, mais maintenue pour certains secteurs (transport d'hydrocarbures, etc.). Modifiable ici.",
+      "active": false,
+      "rate": 2.0
+    },
+    "ibs": {
+      "rates": {
+        "production": 19.0,
+        "btp_tourisme": 23.0,
+        "commerce_services": 26.0
+      }
+    }
+  },
+  "deadlines": [
+    {
+      "code": "G50",
+      "name": "Déclaration Mensuelle G50",
+      "periodicity": "Mensuelle",
+      "dayOfMonth": 20,
+      "description": "Paiement de la TVA, TAP, IRG/Salaires et acomptes IBS pour le mois précédent."
+    },
+    {
+      "code": "G12_PREV",
+      "name": "Déclaration Prévisionnelle IFU (G12)",
+      "periodicity": "Annuelle",
+      "deadlineDate": "06-30",
+      "description": "Déclaration prévisionnelle de l'IFU pour l'exercice en cours."
+    },
+    {
+      "code": "G12_DEF",
+      "name": "Déclaration Définitive IFU (G12 bis)",
+      "periodicity": "Annuelle",
+      "deadlineDate": "01-20",
+      "description": "Déclaration définitive du chiffre d'affaires réel de l'année précédente."
+    },
+    {
+      "code": "LIASSE",
+      "name": "Liasse Fiscale (IBS / Déclaration Générale de Résultats)",
+      "periodicity": "Annuelle",
+      "deadlineDate": "04-30",
+      "description": "Dépôt des bilans et états financiers pour le régime réel."
+    }
+  ]
+}
